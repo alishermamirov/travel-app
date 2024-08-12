@@ -18,7 +18,8 @@ class AddPlaceScreen extends StatefulWidget {
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   File? _savedImage;
   String _title = "";
-  PlaceLocation? _placeLocation;
+  PlaceLocation? _placeLocation =
+      PlaceLocation(lat: 75, long: 54, address: "adsf");
   final _formKey = GlobalKey<FormState>();
   void _takeSaveImage(savedImage) {
     _savedImage = savedImage;
@@ -46,6 +47,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text("Sayohat joyini qo'shish"),
       ),

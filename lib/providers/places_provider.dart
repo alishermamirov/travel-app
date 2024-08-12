@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../models/place.dart';
 
-
 class PlacesProvider with ChangeNotifier {
   List<Place> _list = [];
   List<Place> get list {
@@ -19,11 +18,9 @@ class PlacesProvider with ChangeNotifier {
         image: image);
     _list.add(newPlace);
     notifyListeners();
-   
   }
 
   Future<void> getplaces() async {
-   
     notifyListeners();
   }
 
