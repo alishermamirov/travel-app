@@ -6,6 +6,7 @@ import 'package:sayohat_dasturi/widgets/image_input.dart';
 
 import '../models/place.dart';
 import '../providers/places_provider.dart';
+import '../widgets/location_input.dart';
 
 class AddPlaceScreen extends StatefulWidget {
   const AddPlaceScreen({super.key});
@@ -85,7 +86,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        // LocationInput(takepickerLocation: _takepickerLocation),
+                        LocationInput(takepickerLocation: _takepickerLocation),
                       ],
                     ),
                   )),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../models/place.dart';
 import '../providers/places_provider.dart';
+import 'map_screen.dart';
 
 class PlaceDetailsScreen extends StatelessWidget {
   const PlaceDetailsScreen({super.key});
@@ -34,20 +36,20 @@ class PlaceDetailsScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          // TextButton(
-          //     onPressed: () {
-          //       Navigator.of(context).push(MaterialPageRoute(
-          //         builder: (context) => MapScreen(
-          //           placeLocation: PlaceLocation(
-          //             latitude: place.location.latitude,
-          //             logitude: place.location.logitude,
-          //             address: "Jizzax",
-          //           ),
-          //           isSelecting: true,
-          //         ),
-          //       ));
-          //     },
-          //     child: Text("Manzilni ko'rish"))
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MapScreen(
+                    placeLocation: PlaceLocation(
+                      lat: place.location.lat,
+                      long: place.location.long,
+                      address: place.location.address,
+                    ),
+                    isSelecting: true,
+                  ),
+                ));
+              },
+              child: Text("Manzilni ko'rish"))
         ],
       ),
     );
