@@ -15,7 +15,7 @@ class PlacesDb {
   }
 
   static Future<void> insert(String table, Map<String, dynamic> data) async {
-    final sqlDb = await database();
+    final sqlDb = await PlacesDb.database();
     sqlDb.insert(
       table,
       data,
@@ -24,7 +24,7 @@ class PlacesDb {
   }
 
   static Future<List<Map<String, dynamic>>> getData(String table) async {
-    final sqlDb = await database();
+    final sqlDb = await PlacesDb.database();
     return sqlDb.query(table);
   }
 }
